@@ -1,12 +1,9 @@
-﻿using SkumOgSandhed.Domain.Entities;
+﻿using SkumOgSandhed.Domain;
 
-namespace SkumOgSandhed.Application;
-
-public class Class1
+namespace SkumOgSandhed.Application
 {
-    public void test()
+    public class Class1
     {
-        Brewery brewerytest = new Brewery();
+        Beer beer = new Beer();
     }
-
 }
