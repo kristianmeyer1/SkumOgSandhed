@@ -7,3 +7,44 @@
 <div class="text-center">
     <h1 class="display-4">Velkommen</h1>
 </div>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<table id="beerTable" class="display">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Brygget</th>
+            <th>Drukket</th>
+            <th>ABV</th>
+            <th>Gæring</th>
+            <th>Gærings Type</th>
+            <th>Pris</th>
+            <th>Røvernes Rating</th>
+            <th>Untappd Rating</th>
+        </tr>
+    </thead>
+</table>
+
+<script>
+$(document).ready(function() {
+    var table = $('#beerTable').DataTable({
+        ajax: '/api/beers',
+        columns: [
+            { data: 'name' },
+            { data: 'brewery' },
+            { data: 'style' },
+            { data: 'abv' },
+            { data: 'ibu' }
+        ]
+    });
+
+    $('#beerTable tbody').on('click', 'tr', function () {
+        var data = table.row(this).data();
+        window.location.href = '/Beer/Details/' + data.id; // Navigate to detail page
+    });
+});
+</script>
+
