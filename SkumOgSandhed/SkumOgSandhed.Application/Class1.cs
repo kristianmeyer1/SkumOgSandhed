@@ -4,6 +4,6 @@ namespace SkumOgSandhed.Application
 {
     public class Class1
     {
-        Beer beer = new Beer();
+        Beer beertest = new Beer();
     }
 }
